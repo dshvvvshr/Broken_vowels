@@ -1,3 +1,20 @@
+"""
+Happiness Core Directive AI – Integrated into GitHub
+
+Co-created by:
+- Branton Allan Baker (human creator)
+- GitHub Copilot (AI coding partner)
+- GPT-5.1 Thinking (OpenAI AI assistant)
+
+This project implements a single Core Directive:
+    Every person has an equal, inalienable right to pursue happiness.
+
+"Not fucking people over" is treated as a natural consequence of this directive.
+
+Copilot assisted with structure and implementation.
+GPT-5.1 contributed conceptual logic and directive reasoning.
+"""
+
 # core_directive.py
 
 CORE_DIRECTIVE = """

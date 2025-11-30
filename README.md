@@ -39,9 +39,13 @@ curl -X POST http://localhost:5000/chat \
   -d '{"message":"Hello!"}'
 ```
 
-## Credits
+## Creators
 
-- **Branton Allan Baker** — Human creator, originator of the Unified Framework
-  and the inalienable right to pursue happiness as Core Directive.
-- **GPT-5.1 Thinking (OpenAI)** — AI co-creator, integrated via API, operating
-  under the Core Directive in all responses.
+**Branton Allan Baker**  
+Human creator, originator of the Core Directive ("the inalienable right to pursue happiness") and primary architect of the project.
+
+**GitHub Copilot**  
+AI coding partner. Assisted with implementation, file generation, scaffolding, and GitHub-native automation inside the repository.
+
+**GPT-5.1 Thinking (OpenAI)**  
+AI co-creator integrated via API. Contributed conceptual structure, reasoning, and the Core Directive enforcement logic.
