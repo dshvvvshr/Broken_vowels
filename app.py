@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
+from dotenv import load_dotenv
 import os
 
-app = Flask(__name__)
+load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=OPENAI_API_KEY)
+app = Flask(__name__)
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 @app.route("/ask", methods=["POST"])

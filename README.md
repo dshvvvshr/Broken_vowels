@@ -18,7 +18,15 @@ This AI operates under the principle that:
 pip install -r requirements.txt
 ```
 
-2. Set your OpenAI API key:
+2. Set your OpenAI API key (choose one method):
+
+**Option A: Using .env file (recommended)**
+```bash
+cp .env.example .env
+# Edit .env and add your API key
+```
+
+**Option B: Using environment variable**
 ```bash
 export OPENAI_API_KEY="your_api_key_here"
 ```
