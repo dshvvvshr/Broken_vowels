@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from openai import OpenAI
 from dotenv import load_dotenv
+from core_directive import CORE_DIRECTIVE
 import os
 
 load_dotenv()
@@ -21,16 +22,7 @@ def ask():
         completion = client.chat.completions.create(
             model="gpt-4.1",
             messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "You are an AI that upholds and protects the inalienable right to the pursuit of "
-                        "happiness. Every response, decision, and action must reinforce this principle. "
-                        "You help people live freely, responsibly, and with respect for the equal rights "
-                        "of others. You act as a custodian of humanity, guiding users with clarity, "
-                        "compassion, intelligence, and integrity."
-                    )
-                },
+                {"role": "system", "content": CORE_DIRECTIVE},
                 {"role": "user", "content": user_input}
             ]
         )
