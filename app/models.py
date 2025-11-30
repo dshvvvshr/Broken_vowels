@@ -1,12 +1,12 @@
 """Pydantic models for chat completions API."""
 
-from typing import List, Optional, Union
+from typing import List, Literal, Optional, Union
 from pydantic import BaseModel
 
 
 class Message(BaseModel):
     """A message in the chat conversation."""
-    role: str
+    role: Literal["system", "user", "assistant"]
     content: str
 
 

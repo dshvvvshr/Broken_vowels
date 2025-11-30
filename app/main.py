@@ -23,13 +23,23 @@ app = FastAPI(
 )
 
 # Add CORS middleware
+# Note: In production, restrict allow_origins to specific domains
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+def estimate_tokens(text: str) -> int:
+    """Estimate token count for text.
+    
+    This uses a simple heuristic: roughly 4 characters per token.
+    For production, use a proper tokenizer like tiktoken.
+    """
+    return max(1, len(text) // 4)
 
 
 def wrap_with_core_directive(messages: List[Message]) -> List[Message]:
@@ -71,6 +81,11 @@ async def chat_completions(request: ChatCompletionRequest) -> ChatCompletionResp
     # In a real scenario, you would forward to an actual LLM API
     response_content = f"Processed {len(wrapped_messages)} messages with Core Directive applied."
     
+    # Estimate token counts
+    prompt_text = " ".join(msg.content for msg in wrapped_messages)
+    prompt_tokens = estimate_tokens(prompt_text)
+    completion_tokens = estimate_tokens(response_content)
+    
     return ChatCompletionResponse(
         id=f"chatcmpl-{uuid.uuid4().hex[:12]}",
         object="chat.completion",
@@ -84,9 +99,9 @@ async def chat_completions(request: ChatCompletionRequest) -> ChatCompletionResp
             )
         ],
         usage=Usage(
-            prompt_tokens=len(str(wrapped_messages)),
-            completion_tokens=len(response_content),
-            total_tokens=len(str(wrapped_messages)) + len(response_content),
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            total_tokens=prompt_tokens + completion_tokens,
         ),
     )
 
