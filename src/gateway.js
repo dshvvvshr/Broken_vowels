@@ -82,7 +82,7 @@ app.post('/v1/chat/completions', async (req, res) => {
     }
 
     // Handle non-streaming request
-    const response = await forwardToOpenAI('/v1/chat/completions', modifiedRequest, req.headers.authorization);
+    const response = await forwardToOpenAI('/v1/chat/completions', modifiedRequest);
     res.json(response);
     
   } catch (error) {
@@ -121,7 +121,7 @@ app.post('/v1/completions', async (req, res) => {
       model: requestBody.model || DEFAULT_MODEL
     };
 
-    const response = await forwardToOpenAI('/v1/completions', modifiedRequest, req.headers.authorization);
+    const response = await forwardToOpenAI('/v1/completions', modifiedRequest);
     res.json(response);
     
   } catch (error) {
@@ -163,7 +163,7 @@ function injectCoreDirective(messages) {
 /**
  * Forward request to OpenAI API
  */
-function forwardToOpenAI(endpoint, body, authHeader) {
+function forwardToOpenAI(endpoint, body) {
   return new Promise((resolve, reject) => {
     const url = new URL(OPENAI_BASE_URL);
     const options = {
@@ -184,7 +184,7 @@ function forwardToOpenAI(endpoint, body, authHeader) {
         try {
           resolve(JSON.parse(data));
         } catch (e) {
-          reject(new Error(`Failed to parse OpenAI response: ${data}`));
+          reject(new Error('Failed to parse OpenAI response'));
         }
       });
     });
