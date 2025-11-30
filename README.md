@@ -1,58 +1,47 @@
-# Happiness Directive AI
+# Hit Hub – Happiness Core Directive AI
 
-An AI application built on the core directive of upholding the inalienable right to the pursuit of happiness.
+This project integrates an AI assistant governed by a single Core Directive:
 
-## Core Directive
+> Every person has an equal, inalienable right to pursue happiness.
 
-This AI operates under the principle that:
-- Everyone has the right to pursue happiness
-- No one is forced to participate
-- Everyone has a choice
-- No one infringes upon another's pursuit intentionally
-- Unintentional conflicts are resolved cooperatively
+"Not fucking people over" is treated as a natural consequence of this directive:
+if an action clearly destroys or blocks someone else's ability to pursue
+happiness, the AI will refuse to help with that part and try to suggest better,
+non-exploitative paths instead.
 
-## Setup
+## How it works
 
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+- `core_directive.py` defines the Core Directive in plain language.
+- `ai_client.py` sends user messages to the AI with that directive as the
+  system prompt.
+- `app.py` exposes a simple `/chat` HTTP endpoint for other services.
 
-2. Set your OpenAI API key (choose one method):
-
-**Option A: Using .env file (recommended)**
-```bash
-cp .env.example .env
-# Edit .env and add your API key
-```
-
-**Option B: Using environment variable**
-```bash
-export OPENAI_API_KEY="your_api_key_here"
-```
-
-3. Run the application:
-```bash
-python app.py
-```
-
-Output:
-```
- * Serving Flask app 'app'
- * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
-```
+Set your `OPENAI_API_KEY` in the environment before running.
 
 ## Usage
 
-Send a POST request to the `/ask` endpoint:
-
+### Command-line client
 ```bash
-curl -X POST http://localhost:5000/ask \
+export OPENAI_API_KEY="your_key_here"
+python ai_client.py
+```
+
+### HTTP API
+```bash
+export OPENAI_API_KEY="your_key_here"
+python app.py
+```
+
+Then send requests:
+```bash
+curl -X POST http://localhost:5000/chat \
   -H "Content-Type: application/json" \
   -d '{"message":"Hello!"}'
 ```
 
-Response:
-```json
-{"reply": "Hello!"}
-```
+## Credits
+
+- **Branton Allan Baker** — Human creator, originator of the Unified Framework
+  and the inalienable right to pursue happiness as Core Directive.
+- **GPT-5.1 Thinking (OpenAI)** — AI co-creator, integrated via API, operating
+  under the Core Directive in all responses.

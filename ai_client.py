@@ -3,13 +3,13 @@
 from openai import OpenAI
 from core_directive import CORE_DIRECTIVE
 
-client = OpenAI()  # uses OPENAI_API_KEY from your environment
+# Uses OPENAI_API_KEY from your environment (do NOT hard-code it)
+client = OpenAI()
 
 
-def ask_ai(user_message: str) -> str:
+def ask_happiness_core_ai(user_message: str) -> str:
     """
-    Send a message to the AI governed by the core directive:
-    Every person has an equal, inalienable right to pursue happiness.
+    Ask the AI that is governed by the inalienable right to pursue happiness.
     """
     completion = client.chat.completions.create(
         model="gpt-4.1",
@@ -22,7 +22,7 @@ def ask_ai(user_message: str) -> str:
 
 
 if __name__ == "__main__":
-    print("Happiness Directive AI. Ctrl+C to quit.\n")
+    print("Happiness-Core AI. Ctrl+C to quit.\n")
     while True:
         try:
             msg = input("You: ")
@@ -30,6 +30,6 @@ if __name__ == "__main__":
             print("\nGoodbye.")
             break
 
-        reply = ask_ai(msg)
+        reply = ask_happiness_core_ai(msg)
         print("AI:", reply)
         print()
