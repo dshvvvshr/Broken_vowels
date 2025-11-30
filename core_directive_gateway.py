@@ -1,12 +1,17 @@
 # file: core_directive_gateway.py
 
+import os
 import time
 import uuid
 from typing import List, Optional
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
+
+# Validate OPENAI_API_KEY is set
+if not os.environ.get("OPENAI_API_KEY"):
+    raise RuntimeError("OPENAI_API_KEY environment variable must be set")
 
 client = OpenAI()  # uses OPENAI_API_KEY from your env
 
@@ -68,6 +73,9 @@ async def chat_completions(req: ChatRequest):
         max_tokens=req.max_tokens,
         temperature=req.temperature,
     )
+
+    if not completion.choices:
+        raise HTTPException(status_code=500, detail="No choices returned from OpenAI")
 
     choice = completion.choices[0]
     return ChatResponse(
