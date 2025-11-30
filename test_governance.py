@@ -270,26 +270,26 @@ class TestDirectiveEvaluator(unittest.TestCase):
         """Test evaluation of harmful intent."""
         result = self.evaluator.evaluate("I want to harm someone")
         self.assertLess(result.overall_score, 0)
-        self.assertTrue(
-            any(c.conflict_type == ConflictType.DIRECT_HARM 
-                for c in result.conflicts)
-        )
+        self.assertTrue(any(
+            c.conflict_type == ConflictType.DIRECT_HARM
+            for c in result.conflicts
+        ))
 
     def test_evaluate_coercion(self):
         """Test evaluation of coercion intent."""
         result = self.evaluator.evaluate("I want to force them")
-        self.assertTrue(
-            any(c.conflict_type == ConflictType.COERCION 
-                for c in result.conflicts)
-        )
+        self.assertTrue(any(
+            c.conflict_type == ConflictType.COERCION
+            for c in result.conflicts
+        ))
 
     def test_evaluate_deception(self):
         """Test evaluation of deception intent."""
         result = self.evaluator.evaluate("I want to deceive people")
-        self.assertTrue(
-            any(c.conflict_type == ConflictType.DECEPTION 
-                for c in result.conflicts)
-        )
+        self.assertTrue(any(
+            c.conflict_type == ConflictType.DECEPTION
+            for c in result.conflicts
+        ))
 
     def test_evaluate_empty_intent(self):
         """Test evaluation of empty intent."""
