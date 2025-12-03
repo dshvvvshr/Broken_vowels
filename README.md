@@ -24,9 +24,12 @@ The answer will always be simple: Yes or No.
 
 ## Quick Start
 
+- **New to this?** Start with [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for a one-page overview
 - Read [CUSTODIAN_KERNEL.md](CUSTODIAN_KERNEL.md) for the complete philosophical framework
 - See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for how this applies in communities
 - Check [EXAMPLES.md](EXAMPLES.md) for practical applications
+- Explore [IMPLEMENTATION_GUIDE.md](IMPLEMENTATION_GUIDE.md) for daily practices
+- Browse [FAQ.md](FAQ.md) for answers to common questions
 
 ## The Shift
 
