@@ -24,12 +24,18 @@ The answer will always be simple: Yes or No.
 
 ## Quick Start
 
+**Core Kernel (Start Here):**
 - **New to this?** Start with [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for a one-page overview
 - Read [CUSTODIAN_KERNEL.md](CUSTODIAN_KERNEL.md) for the complete philosophical framework
 - See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for how this applies in communities
 - Check [EXAMPLES.md](EXAMPLES.md) for practical applications
 - Explore [IMPLEMENTATION_GUIDE.md](IMPLEMENTATION_GUIDE.md) for daily practices
 - Browse [FAQ.md](FAQ.md) for answers to common questions
+
+**Peripheral Layers (Applications):**
+- **[PERIPHERAL_LAYERS/](PERIPHERAL_LAYERS/)** - Technology-specific applications of the kernel
+  - [RF Sensing & Surveillance](PERIPHERAL_LAYERS/rf_sensing/) - Wireless sensing ethics
+  - [6G Neural Drones & BCIs](PERIPHERAL_LAYERS/6g_neural_drones/) - Brain-computer interface ethics
 
 ## The Shift
 
