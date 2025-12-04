@@ -329,6 +329,13 @@ This project is dedicated to the public good. The Core Directive belongs to huma
 # Broken_vowels
 Building something sans-learning any code period.
 
+## Point Copilot LLM Gateway at your server
+
+From the marketplace docs:
+
+1. Install "GitHub Copilot LLM Gateway" in VS Code.
+2. Open VS Code Settings (`Ctrl+,` or `Cmd+,` on macOS) → search: Copilot LLM Gateway
+3. Set Server URL to your LLM Gateway server endpoint (e.g., `https://your-server.example.com/api`).
 ## Getting Started
 
 To run the web server locally:
