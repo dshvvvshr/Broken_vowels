@@ -329,6 +329,16 @@ This project is dedicated to the public good. The Core Directive belongs to huma
 # Broken_vowels
 Building something sans-learning any code period.
 
+## Getting Started
+
+To run the web server locally:
+
+```bash
+python3 server.py
+```
+
+Then open your browser and navigate to http://localhost:8000/
+
 ## GitHub Copilot LLM Gateway
 
 For those who want to use self-hosted open-source language models with GitHub Copilot, check out the [GitHub Copilot LLM Gateway](https://github.com/arbs-io/github-copilot-llm-gateway) VS Code extension.
