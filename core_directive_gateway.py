@@ -9,8 +9,9 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
 
+# Validate OPENAI_API_KEY is set
 if not os.environ.get("OPENAI_API_KEY"):
-    raise RuntimeError("OPENAI_API_KEY environment variable is required")
+    raise RuntimeError("OPENAI_API_KEY environment variable must be set")
 
 client = OpenAI()  # uses OPENAI_API_KEY from your env
 
@@ -30,9 +31,11 @@ and, if you can, suggest a better path that doesn't.
 
 # --- OpenAI-compatible request/response models ---
 
+
 class Message(BaseModel):
     role: str
     content: str
+
 
 class ChatRequest(BaseModel):
     model: str
@@ -40,10 +43,12 @@ class ChatRequest(BaseModel):
     max_tokens: Optional[int] = None
     temperature: Optional[float] = None
 
+
 class Choice(BaseModel):
     index: int
     message: Message
     finish_reason: str
+
 
 class ChatResponse(BaseModel):
     id: str
@@ -69,9 +74,10 @@ async def chat_completions(req: ChatRequest):
         temperature=req.temperature,
     )
 
-    choice = completion.choices[0] if completion.choices else None
-    if not choice:
-        raise HTTPException(status_code=500, detail="No response from OpenAI")
+    if not completion.choices:
+        raise HTTPException(status_code=500, detail="No choices returned from OpenAI")
+
+    choice = completion.choices[0]
     return ChatResponse(
         id=f"chatcmpl-{uuid.uuid4().hex}",
         object="chat.completion",
