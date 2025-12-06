@@ -1,0 +1,28 @@
+{
+  "name": "llm-gateway",
+  "version": "1.0.0",
+  "description": "LLM Gateway - Core Directive Proxy for OpenAI-compatible APIs",
+  "main": "src/gateway.js",
+  "scripts": {
+    "start": "node src/gateway.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "llm",
+    "gateway",
+    "openai",
+    "proxy",
+    "copilot"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "supertest": "^7.1.4"
+  }
+}
