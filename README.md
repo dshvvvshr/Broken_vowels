@@ -1,4 +1,4 @@
-# Hit Hub – Happiness Core Directive AI
+# Prime Security
 
 This project integrates an AI assistant governed by a single Core Directive:
 
@@ -8,6 +8,8 @@ This project integrates an AI assistant governed by a single Core Directive:
 if an action clearly destroys or blocks someone else's ability to pursue
 happiness, the AI will refuse to help with that part and try to suggest better,
 non-exploitative paths instead.
+
+**Prime Security** represents the combined effort of all branches under the inalienable right to pursue happiness. The kernel is the core directive itself.
 
 ## How it works
 

@@ -1,5 +1,5 @@
 """
-Happiness Core Directive AI – Integrated into GitHub
+Prime Security – The Core Directive Kernel
 
 Co-created by:
 - Branton Allan Baker (human creator)
@@ -10,6 +10,9 @@ This project implements a single Core Directive:
     Every person has an equal, inalienable right to pursue happiness.
 
 "Not fucking people over" is treated as a natural consequence of this directive.
+
+Prime Security represents the combined effort of all branches under the 
+inalienable right to pursue happiness. The kernel is the core directive itself.
 
 Copilot assisted with structure and implementation.
 GPT-5.1 contributed conceptual logic and directive reasoning.
