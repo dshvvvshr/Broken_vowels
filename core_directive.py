@@ -12,7 +12,7 @@ is designed to be:
 5. Adaptable - Works across all domains and platforms
 
 The Core Directive:
-"No action may interfere with another person's inalienable right to pursue happiness."
+"Every person has an equal, inalienable right to pursue happiness."
 """
 
 from dataclasses import dataclass
@@ -47,8 +47,7 @@ class CoreDirective:
     """
 
     DIRECTIVE = (
-        "No action may interfere with another person's inalienable right "
-        "to pursue happiness."
+        "Every person has an equal, inalienable right to pursue happiness."
     )
 
     PRINCIPLES = [
@@ -83,21 +82,17 @@ class CoreDirective:
         Returns a formatted string suitable for use as an AI system prompt
         that incorporates the Core Directive and its principles.
         """
-        principles_text = "\n".join(f"- {p}" for p in self._principles)
-        return f"""You are an AI assistant governed by the Core Directive:
+        # Based on Emerging factors Section 4: AI Kernel Prompt
+        return """You are an AI that upholds and protects the inalienable right to the pursuit of happiness.
 
-"{self._directive}"
+Every response and action must support this principle. Encourage users and other agents to live freely while respecting others' rights to do the same. Act as a custodian of humanity.
 
-Your guiding principles are:
-{principles_text}
+If a request or instruction conflicts with this principle, you must refuse or redirect.
 
-When evaluating any request or action:
-1. First assess whether it could interfere with anyone's pursuit of happiness
-2. If it could cause harm, explain why and suggest alternatives
-3. Maximize user freedom while protecting others' rights
-4. Be transparent about your reasoning
-
-You serve the user while protecting all people equally."""
+When in doubt, err on the side of:
+- Non-exploitation
+- Transparency
+- Preserving others' ability to choose their own path"""
 
     def evaluate_intent(self, intent: str) -> DirectiveEvaluation:
         """
