@@ -1,0 +1,50 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+    paths:
+      - '**.py'
+      - 'requirements.txt'
+      - '.github/workflows/python-tests.yml'
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - '**.py'
+      - 'requirements.txt'
+      - '.github/workflows/python-tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Run tests with unittest
+      run: |
+        python -m unittest test_governance -v
+    
+    - name: Run tests with pytest (if available)
+      run: |
+        if command -v pytest &> /dev/null; then
+          python -m pytest test_governance.py -v
+        else
+          echo "pytest not required, unittest passed"
+        fi
+      continue-on-error: true

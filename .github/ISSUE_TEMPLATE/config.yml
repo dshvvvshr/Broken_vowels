@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Question or Discussion
+    url: https://github.com/dshvvvshr/Broken_vowels/discussions
+    about: Ask questions or discuss ideas with the community
+  - name: Core Directive Documentation
+    url: https://github.com/dshvvvshr/Broken_vowels/blob/main/CUSTODIAN_KERNEL.md
+    about: Learn about the Core Directive and its principles

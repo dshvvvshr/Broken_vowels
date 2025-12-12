@@ -1,5 +1,10 @@
 # LLM Gateway - Core Directive Proxy
 
+[![Python Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Python%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/python-tests.yml)
+[![Node.js Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Node.js%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/node-tests.yml)
+[![CodeQL](https://github.com/dshvvvshr/Broken_vowels/workflows/CodeQL%20Analysis/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/codeql.yml)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+
 An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows you to govern AI responses through your own rules and principles.
 
 ## Features
@@ -132,13 +137,47 @@ This ensures your governing principles are always in effect, while preserving an
 
 ## Testing
 
+### Node.js Tests
+
 ```bash
 npm test
 ```
 
+### Python Tests
+
+```bash
+python -m unittest test_governance -v
+# or
+python -m pytest test_governance.py -v
+```
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- How to submit issues and pull requests
+- Code style guidelines
+- Testing requirements
+- Code of conduct
+
+All contributions must align with our [Core Directive](CUSTODIAN_KERNEL.md).
+
+## Security
+
+Please see our [Security Policy](SECURITY.md) for information on:
+
+- Reporting vulnerabilities
+- Security best practices
+- Supported versions
+
 ## License
 
-ISC 
+This is free and unencumbered software released into the public domain under the [Unlicense](LICENSE). 
+
+This project is dedicated to the public good. The Core Directive belongs to humanity.
+
+---
+
 # Core Directive Governance Layer
 
 A universal governance kernel for AI systems and digital interactions that protects every individual's inalienable right to pursue happiness.
