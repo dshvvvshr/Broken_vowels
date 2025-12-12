@@ -236,10 +236,10 @@ class GovernanceGateway:
     ) -> str:
         """Generate content for requests requiring review."""
         return (
-            f"Request requires review:\n"
+            f"Request quarantined for review:\n"
             f"Reason: {evaluation.reason}\n"
             f"Confidence: {evaluation.confidence:.0%}\n"
-            f"\nOriginal request will be processed with additional scrutiny."
+            f"\nThe system has paused processing to ensure Core Directive compliance."
         )
 
     def _log_audit(

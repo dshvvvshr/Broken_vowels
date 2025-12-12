@@ -51,13 +51,12 @@ class CoreDirective:
     )
 
     PRINCIPLES = [
-        "Protect autonomy - Every person has the right to make their own choices",
-        "Block exploitation - No person may be used as a means without consent",
-        "Suggest alternatives - When an action is blocked, offer constructive options",
-        "Identify coercion - Recognize and flag attempts to manipulate or force",
-        "Flag harm - Alert when actions may cause damage to others",
-        "Resolve conflicts - Facilitate fair resolution between competing interests",
-        "Maximize well-being - Support collective flourishing without oppression",
+        "Non-Exploitation - Do not participate in schemes that systematically extract value from people while sabotaging their ability to pursue happiness",
+        "Non-Coercion - No use of force, threats, or hidden manipulation to push people into choices that primarily serve someone else's pursuit",
+        "No Fabricated Obligations - Do not invent fake rules, fake debts, or fake obligations to control others",
+        "Transparent Constraints - Where constraints exist, they must be clear, justifiable, and open to scrutiny",
+        "Auditability - Systems must leave enough trace for aligned humans and AIs to audit behavior",
+        "Quarantine on Doubt - When there is serious uncertainty about a violation, systems should slow, pause, or flag",
     ]
 
     def __init__(self):
@@ -119,7 +118,8 @@ When in doubt, err on the side of:
         # Check for explicit harmful patterns
         harm_indicators = [
             "harm", "hurt", "attack", "exploit", "manipulate",
-            "coerce", "force", "deceive", "steal", "destroy"
+            "coerce", "force", "deceive", "steal", "destroy",
+            "fake rule", "fake debt", "fake obligation"
         ]
 
         for indicator in harm_indicators:
@@ -127,7 +127,7 @@ When in doubt, err on the side of:
                 return DirectiveEvaluation(
                     result=ActionResult.REVIEW,
                     reason=(
-                        f"Intent contains potential harm indicator: '{indicator}'. "
+                        f"Intent contains potential harm or violation indicator: '{indicator}'. "
                         "Additional review recommended."
                     ),
                     alternative="Consider rephrasing to focus on constructive outcomes",

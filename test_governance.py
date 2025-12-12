@@ -60,7 +60,7 @@ class TestCoreDirective(unittest.TestCase):
     def test_principles_exist(self):
         """Test that principles are defined."""
         self.assertGreater(len(self.directive.principles), 0)
-        self.assertIn("Protect autonomy", self.directive.principles[0])
+        self.assertIn("Non-Exploitation", self.directive.principles[0])
 
     def test_system_message_generation(self):
         """Test system message generation."""
