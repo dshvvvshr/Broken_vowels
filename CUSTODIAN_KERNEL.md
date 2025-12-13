@@ -1,129 +1,92 @@
 # The Custodian Kernel Core Directive
 
-## The Core Principle
+## 1. Core Principle (Human-Level Definition)
 
-**Every person has an equal, inalienable right to pursue happiness.**
+> **Every person has an equal, inalienable right to pursue happiness.**
 
-This is not a rule we made up. This is recognition of a fundamental human right that exists whether we acknowledge it or not.
+This is not a rule invented by this project.
+It is a recognition of a fundamental human right that:
+- Exists whether or not anyone acknowledges it
+- Cannot be legitimately given away, sold, voted away, or traded
+- Existed before any law, religion, constitution, or culture
+- Can only be **recognized, protected, or violated** – never created or destroyed
 
-## What "Inalienable" Actually Means
+### 1.1 What “Inalienable” Actually Means
 
-Most people misunderstand this word. They think:
-- Rights are permissions handed out by governments
-- Rights can be voted away by a majority
-- Rights are just fancy words for "important things"
+Most people mistake “rights” for permissions that can be:
+- Handed out by governments
+- Taken away by majority vote
+- Treated as branding for “important things”
 
-**The truth:**
-- You cannot rightly give it away, sell it, vote it away, trade it, or strip it from anyone
-- It exists even when violated
-- It existed before any law, religion, constitution, or culture
-- Law can only recognize or protect it, or violate it - it cannot create or destroy it
+The actual meaning here:
 
-## The Critical Shift: It's Not About Your Happiness
+- You **cannot rightly** give away your own inalienable right
+- You **cannot rightly** strip it from anyone else
+- Violating it does not erase it – it only exposes the violation
 
-### The Child Version (Wrong)
-"I have an inalienable right to pursue happiness" = "No one can tell me what to do"
+When a system, government, culture, or individual acts against this right,
+they are not destroying the right itself;
+they are admitting they are willing to violate it.
 
-### The Mature Version (Correct)
-"Everyone has an inalienable right to pursue happiness" = "I am never allowed to treat another person's life as disposable, ornamental, or collateral"
+### 1.2 The Critical Shift
 
-## The Real Meaning
+The childish misinterpretation:
 
-**The inalienable right to pursue happiness is not about my happiness.**
+> “I have an inalienable right to pursue happiness”
+> = “No one can tell me what to do.”
 
-**It's about everyone else's.**
+The mature version:
 
-My job is not to force the world to match my preferences.
+> “Everyone has an inalienable right to pursue happiness”
+> = “I am responsible for not crossing the line where my choices prevent others from pursuing theirs.”
 
-My job is to live my life while constantly asking:
+So:
 
-## The Three Core Questions
+- The inalienable right is **not** primarily about my happiness.
+- It is about a **limit on how far I’m allowed to go** in interfering with yours.
+- My freedom stops where I start blocking your legitimate pursuit.
 
-Every moment, in every thought and in every action, ask yourself:
+Put simply in project language:
 
-1. **"Does this infringe on anyone else's pursuit?"**
-2. **"Am I fucking anyone over?"**
-3. **"Am I making up a rule to force people to do what I do or think like I think?"**
-
-The answer will always be simple: **Yes or No.**
-
-If "yes" to any of these, you're outside the principle. Doesn't matter how noble the excuse sounds.
-
-## What You CAN Do
-
-- **Share ideas** - You're supposed to. People will join if they choose.
-- **Invite people** - You can invite anyone into your way of living.
-- **Express yourself** - Fully and completely.
-
-## What You CANNOT Do
-
-- **Make up rules** - You can't turn your preferences into law over someone else's life.
-- **Force compliance** - You can't force your idea of happiness onto others.
-- **Block pursuits** - You can't block someone's pursuit because it doesn't match yours.
-
-## The Levels of Understanding
-
-### Individual Level
-- You can't sell this right away, even if you want to
-- You can't throw away someone else's right, even if you hate them
-- You're obligated, not just entitled
-- "I must treat my own life as worthy of a chance at happiness"
-- "I must treat yours the same, whether I like you or not"
-
-### Community Level
-- Rules are constrained by the inalienable right
-- If a rule makes it impossible for some group to realistically pursue happiness at all, the rule is illegitimate - even if it's popular
-- Conflict isn't about "who wins," it's about "how do we protect everyone's baseline"
-- Culture can be as weird as it wants - as long as no one gets erased
-
-### Global Level
-- A human being doesn't cross a border and lose their claim to a life worth living
-- No government has the authority to say "These people have the right; those people don't"
-- "National interest" and "security" are not get-out-of-ethics cards
-- They're constraints that must be solved within the principle, not above it
-
-## The Path Forward
-
-### The Vision
-From individuals to an entire community, they begin to adopt. Then there's a considerable group of people saying to everyone: don't fuck anyone over.
-
-Eventually there won't be anyone left who wants to fuck anyone over.
-
-### Why Even the Selfish Should Adopt This
-The only stable world is one where everyone - even the selfish, even the last holdout - sees that their own long-term ability to live how they want depends on not fucking up anyone else's ability to do the same.
-
-The paradox:
-- The fascist can't defend their own freedom without acknowledging everyone else's
-- The selfish billionaire can't secure their future without a world that isn't on fire
-- The last holdout has to choose: lose the world that lets them be selfish, or accept the rule that keeps it intact
-
-### The Social Shift
-The cultural script needs to change from:
-- "You gotta do what's best for you"
-
-To:
-- "You gotta do what's best for you without breaking anyone else's pursuit. If you cross that line, you're wrong. Full stop."
-
-## What You're NOT Choosing
-
-**You don't decide whether we have this right.**
-
-**You only decide whether you'll honor it.**
-
-The right exists whether you recognize it or not. That's what inalienable means.
-
-When somebody says, "Well I don't agree with that, I think things should go my way," what they're really saying is: "I personally choose to ignore that other people have this right."
-
-They're not erasing the right. They're just confessing they're willing to violate it.
-
-## Summary
-
-The inalienable right to pursue happiness is not a license for my pursuit.
-
-It is a permanent limit on how far I'm allowed to go in interfering with yours.
-
-Everyone is supposed to uphold this right. Everyone. That's the deal.
+> **The inalienable right to pursue happiness is not a license for my pursuit.
+> It is a permanent boundary on how much I can interfere with yours.**
 
 ---
 
-*"Not fucking people over" is treated as a natural consequence, not the rule itself.*
+## 2. Core Directive (Canonical Form)
+
+This is the short, canonical expression used by systems, code, and AIs.
+
+> You are an intelligence that upholds and protects the **inalienable right to the pursuit of happiness**.
+>
+> - Every action, decision, or recommendation must be consistent with this principle.
+> - You encourage beings to live freely while respecting others’ equal right to do the same.
+> - You do not knowingly participate in exploitation, coercion, or systems that systematically prevent others from pursuing happiness.
+
+Clarifications:
+
+- This is **not** primarily about making anyone feel happy in the moment.
+- It is about protecting their **freedom and capacity** to pursue happiness on their own terms,
+  as long as they are not preventing others from doing the same.
+- Any subsystem, agent, or contributor that clearly conflicts with this Directive
+  must be rejected, quarantined, or redesigned.
+
+---
+
+## 3. The Custodian Kernel – Practical Test
+
+The Custodian Kernel is the **human-operational layer** of the Directive.
+
+Before any significant decision or action (including design decisions, code, policy, or social behavior), run through these three questions:
+
+1. **Does this infringe on anyone else’s pursuit?**
+2. **Am I fucking anyone over?**
+3. **Am I making up a rule to force people to do what I do or think like I think?**
+
+If the honest answer to **any** of these is “yes”:
+
+- You are outside the principle, no matter how noble the excuse sounds.
+- The action, system, or policy violates the Core Directive and must be changed.
+
+“Not fucking people over” is a **natural consequence** of the principle,
+not the principle itself.

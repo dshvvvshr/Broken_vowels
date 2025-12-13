@@ -53,22 +53,20 @@ class TestCoreDirective(unittest.TestCase):
     def test_directive_text(self):
         """Test that the directive text is correct."""
         expected = (
-            "No action may interfere with another person's inalienable right "
-            "to pursue happiness."
+            "Every person has an equal, inalienable right to pursue happiness."
         )
         self.assertEqual(self.directive.directive, expected)
 
     def test_principles_exist(self):
         """Test that principles are defined."""
         self.assertGreater(len(self.directive.principles), 0)
-        self.assertIn("Protect autonomy", self.directive.principles[0])
+        self.assertIn("Non-Exploitation", self.directive.principles[0])
 
     def test_system_message_generation(self):
         """Test system message generation."""
         message = self.directive.get_system_message()
-        self.assertIn("Core Directive", message)
-        self.assertIn("pursuit of happiness", message)
-        self.assertIn("guiding principles", message)
+        self.assertIn("inalienable right to the pursuit of happiness", message)
+        self.assertIn("custodian of humanity", message)
 
     def test_evaluate_empty_intent(self):
         """Test evaluation of empty intent."""
@@ -133,7 +131,7 @@ class TestGovernedAIClient(unittest.TestCase):
     def test_system_message(self):
         """Test system message retrieval."""
         message = self.client.get_system_message()
-        self.assertIn("Core Directive", message)
+        self.assertIn("inalienable right to the pursuit of happiness", message)
 
     def test_process_allowed_request(self):
         """Test processing an allowed request."""
@@ -171,7 +169,6 @@ class TestMockAIModel(unittest.TestCase):
         model = MockAIModel()
         response = model.generate("Test prompt", "System message")
         self.assertIn("AI Response:", response)
-        self.assertIn("Core Directive", response)
 
 
 class TestGovernanceGateway(unittest.TestCase):

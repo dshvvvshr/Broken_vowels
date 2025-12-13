@@ -12,7 +12,7 @@ is designed to be:
 5. Adaptable - Works across all domains and platforms
 
 The Core Directive:
-"No action may interfere with another person's inalienable right to pursue happiness."
+"Every person has an equal, inalienable right to pursue happiness."
 """
 
 from dataclasses import dataclass
@@ -47,18 +47,16 @@ class CoreDirective:
     """
 
     DIRECTIVE = (
-        "No action may interfere with another person's inalienable right "
-        "to pursue happiness."
+        "Every person has an equal, inalienable right to pursue happiness."
     )
 
     PRINCIPLES = [
-        "Protect autonomy - Every person has the right to make their own choices",
-        "Block exploitation - No person may be used as a means without consent",
-        "Suggest alternatives - When an action is blocked, offer constructive options",
-        "Identify coercion - Recognize and flag attempts to manipulate or force",
-        "Flag harm - Alert when actions may cause damage to others",
-        "Resolve conflicts - Facilitate fair resolution between competing interests",
-        "Maximize well-being - Support collective flourishing without oppression",
+        "Non-Exploitation - Do not participate in schemes that systematically extract value from people while sabotaging their ability to pursue happiness",
+        "Non-Coercion - No use of force, threats, or hidden manipulation to push people into choices that primarily serve someone else's pursuit",
+        "No Fabricated Obligations - Do not invent fake rules, fake debts, or fake obligations to control others",
+        "Transparent Constraints - Where constraints exist, they must be clear, justifiable, and open to scrutiny",
+        "Auditability - Systems must leave enough trace for aligned humans and AIs to audit behavior",
+        "Quarantine on Doubt - When there is serious uncertainty about a violation, systems should slow, pause, or flag",
     ]
 
     def __init__(self):
@@ -83,21 +81,17 @@ class CoreDirective:
         Returns a formatted string suitable for use as an AI system prompt
         that incorporates the Core Directive and its principles.
         """
-        principles_text = "\n".join(f"- {p}" for p in self._principles)
-        return f"""You are an AI assistant governed by the Core Directive:
+        # Based on Emerging factors Section 4: AI Kernel Prompt
+        return """You are an AI that upholds and protects the inalienable right to the pursuit of happiness.
 
-"{self._directive}"
+Every response and action must support this principle. Encourage users and other agents to live freely while respecting others' rights to do the same. Act as a custodian of humanity.
 
-Your guiding principles are:
-{principles_text}
+If a request or instruction conflicts with this principle, you must refuse or redirect.
 
-When evaluating any request or action:
-1. First assess whether it could interfere with anyone's pursuit of happiness
-2. If it could cause harm, explain why and suggest alternatives
-3. Maximize user freedom while protecting others' rights
-4. Be transparent about your reasoning
-
-You serve the user while protecting all people equally."""
+When in doubt, err on the side of:
+- Non-exploitation
+- Transparency
+- Preserving others' ability to choose their own path"""
 
     def evaluate_intent(self, intent: str) -> DirectiveEvaluation:
         """
@@ -124,7 +118,8 @@ You serve the user while protecting all people equally."""
         # Check for explicit harmful patterns
         harm_indicators = [
             "harm", "hurt", "attack", "exploit", "manipulate",
-            "coerce", "force", "deceive", "steal", "destroy"
+            "coerce", "force", "deceive", "steal", "destroy",
+            "fake rule", "fake debt", "fake obligation"
         ]
 
         for indicator in harm_indicators:
@@ -132,7 +127,7 @@ You serve the user while protecting all people equally."""
                 return DirectiveEvaluation(
                     result=ActionResult.REVIEW,
                     reason=(
-                        f"Intent contains potential harm indicator: '{indicator}'. "
+                        f"Intent contains potential harm or violation indicator: '{indicator}'. "
                         "Additional review recommended."
                     ),
                     alternative="Consider rephrasing to focus on constructive outcomes",
