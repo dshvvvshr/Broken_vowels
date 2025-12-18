@@ -5,11 +5,20 @@ from openai import OpenAI
 _client = None
 
 def _get_client():
-    """Get or create the OpenAI client instance."""
+    """
+    Get or create the OpenAI client instance.
+    
+    Raises:
+        ValueError: If OPENAI_API_KEY environment variable is not set
+    """
     global _client
     if _client is None:
-        # Use environment variable or a placeholder for testing
-        api_key = os.environ.get("OPENAI_API_KEY", "sk-test-placeholder")
+        api_key = os.environ.get("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError(
+                "OPENAI_API_KEY environment variable must be set. "
+                "Get your API key from https://platform.openai.com/api-keys"
+            )
         _client = OpenAI(api_key=api_key)
     return _client
 

@@ -112,6 +112,25 @@ class TestInitializeAI(unittest.TestCase):
         
         # Verify the return value
         self.assertEqual(result, expected_content)
+    
+    def test_initialize_ai_missing_api_key(self):
+        """Test that missing API key raises a clear error."""
+        # Clear the global client to force re-initialization
+        initialize_ai._client = None
+        
+        # Mock _get_client to call the real implementation without mocking
+        with patch.dict(os.environ, {}, clear=True):
+            # Remove OPENAI_API_KEY from environment
+            if 'OPENAI_API_KEY' in os.environ:
+                del os.environ['OPENAI_API_KEY']
+            
+            # Attempt to initialize should raise ValueError
+            with self.assertRaises(ValueError) as context:
+                initialize_ai._get_client()
+            
+            # Verify the error message is helpful
+            self.assertIn("OPENAI_API_KEY", str(context.exception))
+            self.assertIn("environment variable", str(context.exception))
 
 
 class TestInteractiveLoop(unittest.TestCase):
