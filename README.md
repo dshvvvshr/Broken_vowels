@@ -145,24 +145,29 @@ The Brave Search MCP server adds web search capabilities to AI assistants, allow
 
 #### Prerequisites
 
-- Node.js v18 or later
+- Node.js v18.x, v20.x, or v22.x (LTS versions recommended)
 - A [Brave Search API key](https://brave.com/search/api/) (free tier available)
-- An MCP-compatible client (Claude, Cursor, Windsurf, etc.)
+- An MCP-compatible client (Claude Desktop, Cursor, Windsurf, etc.)
 
 #### Installation
 
-Use the Smithery CLI to install the Brave Search MCP server:
+Use the Smithery CLI to install the Brave Search MCP server. Replace `<client>` with your MCP client choice (e.g., `claude`, `cursor`, `windsurf`, `cline`):
 
 ```bash
-npx -y @smithery/cli install brave --client claude
+npx -y @smithery/cli install brave --client <client>
 ```
 
 You'll be prompted for:
-1. Your MCP client choice (claude, cursor, windsurf, etc.)
-2. Your Brave Search API key
-3. Optional telemetry preferences
+1. Your Brave Search API key
+2. Optional telemetry preferences
 
-Alternatively, you can provide the configuration via command line:
+Alternatively, you can provide the configuration via command line to skip prompts:
+
+```bash
+npx -y @smithery/cli install brave --client <client> --config '{"BRAVE_API_KEY":"your_api_key_here"}'
+```
+
+Example for Claude Desktop:
 
 ```bash
 npx -y @smithery/cli install brave --client claude --config '{"BRAVE_API_KEY":"your_api_key_here"}'
