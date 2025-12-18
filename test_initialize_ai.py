@@ -5,6 +5,7 @@ This module tests the initialize_ai function that integrates with OpenAI's API
 to provide AI responses governed by the Core Directive.
 """
 
+import os
 import unittest
 from unittest.mock import Mock, patch, MagicMock
 import initialize_ai
@@ -13,21 +14,24 @@ import initialize_ai
 class TestInitializeAI(unittest.TestCase):
     """Tests for the initialize_ai function."""
 
-    @patch('initialize_ai.openai.ChatCompletion.create')
-    def test_initialize_ai_basic_call(self, mock_create):
+    @patch('initialize_ai._get_client')
+    def test_initialize_ai_basic_call(self, mock_get_client):
         """Test that initialize_ai calls OpenAI API with correct parameters."""
-        # Mock the OpenAI response
+        # Mock the OpenAI client and response
+        mock_client = MagicMock()
+        mock_get_client.return_value = mock_client
+        
         mock_response = MagicMock()
         mock_response.choices = [MagicMock()]
-        mock_response.choices[0].message = {'content': 'Test response'}
-        mock_create.return_value = mock_response
+        mock_response.choices[0].message.content = 'Test response'
+        mock_client.chat.completions.create.return_value = mock_response
         
         # Call the function
         result = initialize_ai.initialize_ai("Hello")
         
         # Verify the API was called
-        mock_create.assert_called_once()
-        call_kwargs = mock_create.call_args[1]
+        mock_client.chat.completions.create.assert_called_once()
+        call_kwargs = mock_client.chat.completions.create.call_args[1]
         
         # Check default parameters
         self.assertEqual(call_kwargs['model'], 'gpt-4')
@@ -40,20 +44,23 @@ class TestInitializeAI(unittest.TestCase):
         self.assertEqual(call_kwargs['messages'][1]['role'], 'user')
         self.assertEqual(call_kwargs['messages'][1]['content'], 'Hello')
     
-    @patch('initialize_ai.openai.ChatCompletion.create')
-    def test_initialize_ai_system_message_content(self, mock_create):
+    @patch('initialize_ai._get_client')
+    def test_initialize_ai_system_message_content(self, mock_get_client):
         """Test that the system message contains Core Directive principles."""
-        # Mock the OpenAI response
+        # Mock the OpenAI client and response
+        mock_client = MagicMock()
+        mock_get_client.return_value = mock_client
+        
         mock_response = MagicMock()
         mock_response.choices = [MagicMock()]
-        mock_response.choices[0].message = {'content': 'Test response'}
-        mock_create.return_value = mock_response
+        mock_response.choices[0].message.content = 'Test response'
+        mock_client.chat.completions.create.return_value = mock_response
         
         # Call the function
         initialize_ai.initialize_ai("Test prompt")
         
         # Get the system message
-        call_kwargs = mock_create.call_args[1]
+        call_kwargs = mock_client.chat.completions.create.call_args[1]
         system_message = call_kwargs['messages'][0]['content']
         
         # Verify Core Directive principles are present
@@ -61,14 +68,17 @@ class TestInitializeAI(unittest.TestCase):
         self.assertIn('custodian of humanity', system_message)
         self.assertIn('respecting others', system_message)
     
-    @patch('initialize_ai.openai.ChatCompletion.create')
-    def test_initialize_ai_custom_parameters(self, mock_create):
+    @patch('initialize_ai._get_client')
+    def test_initialize_ai_custom_parameters(self, mock_get_client):
         """Test that custom parameters are passed correctly."""
-        # Mock the OpenAI response
+        # Mock the OpenAI client and response
+        mock_client = MagicMock()
+        mock_get_client.return_value = mock_client
+        
         mock_response = MagicMock()
         mock_response.choices = [MagicMock()]
-        mock_response.choices[0].message = {'content': 'Test response'}
-        mock_create.return_value = mock_response
+        mock_response.choices[0].message.content = 'Test response'
+        mock_client.chat.completions.create.return_value = mock_response
         
         # Call with custom parameters
         initialize_ai.initialize_ai(
@@ -79,20 +89,23 @@ class TestInitializeAI(unittest.TestCase):
         )
         
         # Verify custom parameters
-        call_kwargs = mock_create.call_args[1]
+        call_kwargs = mock_client.chat.completions.create.call_args[1]
         self.assertEqual(call_kwargs['model'], 'gpt-3.5-turbo')
         self.assertEqual(call_kwargs['temperature'], 0.5)
         self.assertEqual(call_kwargs['max_tokens'], 200)
     
-    @patch('initialize_ai.openai.ChatCompletion.create')
-    def test_initialize_ai_returns_content(self, mock_create):
+    @patch('initialize_ai._get_client')
+    def test_initialize_ai_returns_content(self, mock_get_client):
         """Test that initialize_ai returns the AI response content."""
-        # Mock the OpenAI response
+        # Mock the OpenAI client and response
+        mock_client = MagicMock()
+        mock_get_client.return_value = mock_client
+        
         expected_content = "This is a helpful AI response."
         mock_response = MagicMock()
         mock_response.choices = [MagicMock()]
-        mock_response.choices[0].message = {'content': expected_content}
-        mock_create.return_value = mock_response
+        mock_response.choices[0].message.content = expected_content
+        mock_client.chat.completions.create.return_value = mock_response
         
         # Call the function
         result = initialize_ai.initialize_ai("Hello")
