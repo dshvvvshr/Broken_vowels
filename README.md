@@ -135,6 +135,74 @@ When a request comes in:
 
 This ensures your governing principles are always in effect, while preserving any additional context from the client.
 
+## Extending with MCP Servers
+
+You can enhance your LLM Gateway with additional capabilities using MCP (Model Context Protocol) servers. MCP servers provide tools and resources that extend what AI assistants can do.
+
+### Installing the Brave Search MCP Server
+
+The Brave Search MCP server adds web search capabilities to AI assistants, allowing them to search the web and retrieve current information.
+
+#### Prerequisites
+
+- Node.js v18 or later
+- A [Brave Search API key](https://brave.com/search/api/) (free tier available)
+- An MCP-compatible client (Claude, Cursor, Windsurf, etc.)
+
+#### Installation
+
+Use the Smithery CLI to install the Brave Search MCP server:
+
+```bash
+npx -y @smithery/cli install brave --client claude
+```
+
+You'll be prompted for:
+1. Your MCP client choice (claude, cursor, windsurf, etc.)
+2. Your Brave Search API key
+3. Optional telemetry preferences
+
+Alternatively, you can provide the configuration via command line:
+
+```bash
+npx -y @smithery/cli install brave --client claude --config '{"BRAVE_API_KEY":"your_api_key_here"}'
+```
+
+#### What Gets Installed
+
+The Smithery CLI will:
+1. Download and configure the Brave Search MCP server
+2. Update your AI client's configuration file (e.g., `claude_desktop_config.json`)
+3. Enable the `brave_web_search` and `brave_local_search` tools in your AI assistant
+
+#### Using Brave Search
+
+Once installed, your AI assistant will have access to:
+- `brave_web_search`: Search the web for current information
+- `brave_local_search`: Perform local business and location searches
+
+The AI can now answer questions about recent events, current prices, news, and other time-sensitive information.
+
+#### Manual Configuration
+
+If you prefer to configure manually, add the following to your MCP client's configuration file:
+
+```json
+{
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+For more MCP servers and capabilities, visit the [Smithery Registry](https://smithery.ai).
+
 ## Testing
 
 ### Node.js Tests
