@@ -49,7 +49,17 @@ def initialize_ai(prompt, model="gpt-4", temperature=0.7, max_tokens=150):
         temperature=temperature,
         max_tokens=max_tokens
     )
-    return response.choices[0].message.content
+    try:
+        choices = getattr(response, "choices", None)
+        if not choices:
+            raise RuntimeError("OpenAI API response did not contain any choices.")
+        message = getattr(choices[0], "message", None)
+        content = getattr(message, "content", None) if message is not None else None
+        if content is None:
+            raise RuntimeError("OpenAI API response did not contain message content in the first choice.")
+        return content
+    except (AttributeError, IndexError, TypeError) as exc:
+        raise RuntimeError("Malformed OpenAI API response structure.") from exc
 
 # Example interaction
 if __name__ == "__main__":
