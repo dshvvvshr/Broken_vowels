@@ -116,6 +116,8 @@ class TestInitializeAI(unittest.TestCase):
     def test_initialize_ai_missing_api_key(self):
         """Test that missing API key raises a clear error."""
         # Clear the global client to force re-initialization
+        original_client = initialize_ai._client
+        self.addCleanup(lambda: setattr(initialize_ai, "_client", original_client))
         initialize_ai._client = None
         
         # Mock _get_client to call the real implementation without mocking
