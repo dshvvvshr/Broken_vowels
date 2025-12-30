@@ -94,7 +94,11 @@ describe('LLM Gateway', () => {
       expect(response.body.error.message).toContain('OPENAI_API_KEY is not configured');
       
       // Restore original env
-      process.env.OPENAI_API_KEY = originalKey;
+      if (originalKey !== undefined) {
+        process.env.OPENAI_API_KEY = originalKey;
+      } else {
+        delete process.env.OPENAI_API_KEY;
+      }
       if (originalDotenv) {
         process.env.DOTENV_CONFIG_PATH = originalDotenv;
       } else {
@@ -129,7 +133,11 @@ describe('LLM Gateway', () => {
       expect(response.body.error.message).toContain('OPENAI_API_KEY is not configured');
       
       // Restore original env
-      process.env.OPENAI_API_KEY = originalKey;
+      if (originalKey !== undefined) {
+        process.env.OPENAI_API_KEY = originalKey;
+      } else {
+        delete process.env.OPENAI_API_KEY;
+      }
       if (originalDotenv) {
         process.env.DOTENV_CONFIG_PATH = originalDotenv;
       } else {
