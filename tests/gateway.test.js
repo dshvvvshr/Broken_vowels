@@ -72,7 +72,12 @@ describe('LLM Gateway', () => {
     it('should return error when OPENAI_API_KEY is not set', async () => {
       // Save original env
       const originalKey = process.env.OPENAI_API_KEY;
-      delete process.env.OPENAI_API_KEY;
+      const originalDotenv = process.env.DOTENV_CONFIG_PATH;
+      
+      // Set to empty string to simulate missing key
+      process.env.OPENAI_API_KEY = '';
+      // Prevent dotenv from reloading
+      process.env.DOTENV_CONFIG_PATH = '/dev/null';
       
       // Re-require the module to pick up the new env
       jest.resetModules();
@@ -89,8 +94,15 @@ describe('LLM Gateway', () => {
       expect(response.body.error.message).toContain('OPENAI_API_KEY is not configured');
       
       // Restore original env
-      if (originalKey) {
+      if (originalKey !== undefined) {
         process.env.OPENAI_API_KEY = originalKey;
+      } else {
+        delete process.env.OPENAI_API_KEY;
+      }
+      if (originalDotenv) {
+        process.env.DOTENV_CONFIG_PATH = originalDotenv;
+      } else {
+        delete process.env.DOTENV_CONFIG_PATH;
       }
     });
   });
@@ -99,7 +111,12 @@ describe('LLM Gateway', () => {
     it('should return error when OPENAI_API_KEY is not set', async () => {
       // Save original env
       const originalKey = process.env.OPENAI_API_KEY;
-      delete process.env.OPENAI_API_KEY;
+      const originalDotenv = process.env.DOTENV_CONFIG_PATH;
+      
+      // Set to empty string to simulate missing key
+      process.env.OPENAI_API_KEY = '';
+      // Prevent dotenv from reloading
+      process.env.DOTENV_CONFIG_PATH = '/dev/null';
       
       // Re-require the module to pick up the new env
       jest.resetModules();
@@ -116,8 +133,15 @@ describe('LLM Gateway', () => {
       expect(response.body.error.message).toContain('OPENAI_API_KEY is not configured');
       
       // Restore original env
-      if (originalKey) {
+      if (originalKey !== undefined) {
         process.env.OPENAI_API_KEY = originalKey;
+      } else {
+        delete process.env.OPENAI_API_KEY;
+      }
+      if (originalDotenv) {
+        process.env.DOTENV_CONFIG_PATH = originalDotenv;
+      } else {
+        delete process.env.DOTENV_CONFIG_PATH;
       }
     });
   });
