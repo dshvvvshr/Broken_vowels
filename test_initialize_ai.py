@@ -7,7 +7,7 @@ to provide AI responses governed by the Core Directive.
 
 import os
 import unittest
-from unittest.mock import Mock, patch, MagicMock
+from unittest.mock import patch, MagicMock
 import initialize_ai
 
 
