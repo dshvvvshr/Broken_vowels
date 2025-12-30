@@ -15,6 +15,7 @@ jobs:
     if: |
       github.event.pull_request.user.login == 'dependabot[bot]' ||
       github.event.pull_request.user.login == 'copilot-swe-agent[bot]' ||
+      github.event.pull_request.user.login == 'Copilot' ||
       github.event.pull_request.user.login == 'github-actions[bot]'
     steps:
       - name: Auto approve
