@@ -25,7 +25,7 @@ def _get_client():
 # Initialize the AI
 def initialize_ai(prompt, model="gpt-4", temperature=0.7, max_tokens=150):
     """
-    Initialize and interact with AI using OpenAI's API.
+    Send a prompt to OpenAI's API and return the AI's response.
     
     Args:
         prompt: The user's prompt/question
