@@ -1,7 +1,7 @@
 name: Auto Approve Pull Requests
 
 on:
-  pull_request:
+  pull_request_target:  # Changed from pull_request to pull_request_target
     types: [opened, reopened, synchronize]
 
 permissions:
