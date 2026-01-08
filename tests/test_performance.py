@@ -94,6 +94,11 @@ class TestPerformance(unittest.TestCase):
 class TestResponseTime(unittest.TestCase):
     """Response time tests for individual operations."""
 
+    @staticmethod
+    def calculate_p95(times: list) -> float:
+        """Calculate 95th percentile from a list of times."""
+        return statistics.quantiles(times, n=20)[18]  # 95th percentile
+
     def test_core_directive_response_time(self):
         """Test response time for single evaluation."""
         directive = CoreDirective()
@@ -106,7 +111,7 @@ class TestResponseTime(unittest.TestCase):
             times.append((end - start) * 1000)  # Convert to ms
         
         avg_time = statistics.mean(times)
-        p95_time = statistics.quantiles(times, n=20)[18]  # 95th percentile
+        p95_time = self.calculate_p95(times)
         
         # Average should be under 1ms
         self.assertLess(avg_time, 1.0,
@@ -128,7 +133,7 @@ class TestResponseTime(unittest.TestCase):
             times.append((end - start) * 1000)
         
         avg_time = statistics.mean(times)
-        p95_time = statistics.quantiles(times, n=20)[18]
+        p95_time = self.calculate_p95(times)
         
         # More complex, allow up to 5ms average
         self.assertLess(avg_time, 5.0,

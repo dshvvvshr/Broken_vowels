@@ -152,14 +152,19 @@ class TestGatewayComprehensive(unittest.TestCase):
 
     def test_audit_log_details_truncation(self):
         """Test that audit log truncates long content."""
+        # Import the truncation limit from gateway module
+        from gateway import GovernanceGateway
+        # The gateway truncates to 200 chars in _log_audit
+        DETAILS_TRUNCATION_LENGTH = 200
+        
         long_content = "x" * 500
         request = GatewayRequest.create(long_content, source="test")
         self.gateway.process(request)
         
         log = self.gateway.audit_log
         self.assertEqual(len(log), 1)
-        # Details should be truncated to 200 chars
-        self.assertLessEqual(len(log[0].details), 200)
+        # Details should be truncated
+        self.assertLessEqual(len(log[0].details), DETAILS_TRUNCATION_LENGTH)
 
     def test_clear_audit_log(self):
         """Test clearing the audit log."""
