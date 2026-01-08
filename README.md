@@ -3,9 +3,8 @@
 [![Python Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Python%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/python-tests.yml)
 [![Node.js Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Node.js%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/node-tests.yml)
 [![CodeQL](https://github.com/dshvvvshr/Broken_vowels/workflows/CodeQL%20Analysis/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/codeql.yml)
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
-An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows you to govern AI responses through your own rules and principles.
+licence: credibility licence https://drive.google.com/file/d/1WDCscv11Ebhcb0A2uEBtXsiBVkal5Np-/view?usp=drivesdk
+An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows to govern principle of Inalienable Right to Pursue Happiness.
 
 ## Features
 
