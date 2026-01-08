@@ -21,7 +21,7 @@ from typing import Callable, Optional
 from uuid import uuid4
 
 try:
-    from .core_directive import (  # type: ignore
+    from .core_directive import (
         ActionResult,
         CoreDirective,
         DirectiveEvaluation,

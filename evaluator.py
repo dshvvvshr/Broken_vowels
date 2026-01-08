@@ -19,7 +19,7 @@ from enum import Enum
 from typing import Optional
 
 try:
-    from .core_directive import ActionResult, DirectiveEvaluation  # type: ignore
+    from .core_directive import ActionResult, DirectiveEvaluation
 except ImportError:  # pragma: no cover
     from core_directive import ActionResult, DirectiveEvaluation
 

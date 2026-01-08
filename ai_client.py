@@ -17,7 +17,7 @@ from dataclasses import dataclass
 from typing import Callable, Optional, Protocol
 
 try:
-    from .core_directive import (  # type: ignore
+    from .core_directive import (
         ActionResult,
         CoreDirective,
         DirectiveEvaluation,
