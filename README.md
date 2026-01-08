@@ -36,7 +36,7 @@ OPENAI_API_KEY=your-openai-api-key-here
 GATEWAY_PORT=3000
 
 # Core Directive - The governing principle injected into all LLM requests
-CORE_DIRECTIVE="You are governed by the following core directive: The inalienable right to pursue happiness is paramount. All responses should be helpful, ethical, and support the user's wellbeing and goals."
+CORE_DIRECTIVE="Every person has an equal, inalienable right to pursue happiness."
 ```
 
 ### 3. Start the Gateway
@@ -129,6 +129,10 @@ When a request comes in:
 4. The response is returned unchanged to the client
 
 This ensures your governing principles are always in effect, while preserving any additional context from the client.
+
+## Unified Core Directive Kernel
+
+For the full specification of the Core Directive and Kernel, see [UNIFIED_CORE_DIRECTIVE_KERNEL.md](UNIFIED_CORE_DIRECTIVE_KERNEL.md).
 
 ## Testing
 

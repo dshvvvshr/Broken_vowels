@@ -268,6 +268,19 @@ class DirectiveEvaluator:
                 ))
                 break
 
+        # Check for fabricated obligations
+        fabricated_keywords = ["fake rule", "fake debt", "fake obligation"]
+        for keyword in fabricated_keywords:
+            if keyword in intent:
+                conflicts.append(ConflictAssessment(
+                    conflict_type=ConflictType.COERCION, # Treated as coercion/control
+                    severity=0.8,
+                    description=f"Intent suggests fabricated obligation: '{keyword}'",
+                    resolution_possible=True,
+                    suggested_resolution="Do not invent fake rules or obligations to control others",
+                ))
+                break
+
         # No conflicts if positive indicators dominate
         if not conflicts and self._has_positive_indicators(intent):
             conflicts.append(ConflictAssessment(
