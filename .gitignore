@@ -7,6 +7,15 @@ yarn-error.log
 .env
 .env.local
 
+# Coverage reports
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+*.lcov
+coverage.xml
+*.cover
+
 # Gradle files
 .gradle/
 
@@ -53,12 +62,9 @@ env/
 *.egg-info/
 dist/
 *.egg
-.env
 *.so
-.Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -68,18 +74,11 @@ parts/
 sdist/
 var/
 wheels/
-env/
-venv/
-.venv/
-*.egg-info/
-.installed.cfg
-*.egg
 .pytest_cache/
-.coverage
-htmlcov/
 .tox/
 .nox/
 .mypy_cache/
-.venv/
-venv/
-ENV/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/

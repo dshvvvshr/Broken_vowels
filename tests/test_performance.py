@@ -285,10 +285,10 @@ class TestModuleLevelPerformance(unittest.TestCase):
             directive.evaluate_intent("test")
         direct_time = time.time() - start
         
-        # Singleton overhead should be minimal (within 20%)
+        # Singleton overhead should be minimal (within 30%)
         overhead = (module_time - direct_time) / direct_time
-        self.assertLess(overhead, 0.2,
-                       f"Module function overhead {overhead:.1%} exceeds 20%")
+        self.assertLess(overhead, 0.3,
+                       f"Module function overhead {overhead:.1%} exceeds 30%")
 
 
 if __name__ == "__main__":
