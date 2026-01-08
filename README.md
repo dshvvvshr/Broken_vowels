@@ -245,7 +245,7 @@ Please see our [Security Policy](SECURITY.md) for information on:
 
 ## License
 
-This is free and unencumbered software released into the public domain under the [Unlicense](LICENSE). 
+This is free and unencumbered software released into the public domain under the Credibility License (LICENSE). 
 
 This project is dedicated to the public good. The Core Directive belongs to humanity.
 
