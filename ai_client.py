@@ -3,14 +3,24 @@
 from openai import OpenAI
 from core_directive import CORE_DIRECTIVE
 
-# Uses OPENAI_API_KEY from your environment (do NOT hard-code it)
-client = OpenAI()
+# Global client instance - initialized lazily
+_client = None
+
+
+def _get_client():
+    """Get or initialize the OpenAI client."""
+    global _client
+    if _client is None:
+        # Uses OPENAI_API_KEY from your environment (do NOT hard-code it)
+        _client = OpenAI()
+    return _client
 
 
 def ask_happiness_core_ai(user_message: str) -> str:
     """
     Ask the AI that is governed by the inalienable right to pursue happiness.
     """
+    client = _get_client()
     completion = client.chat.completions.create(
         model="gpt-4.1",
         messages=[

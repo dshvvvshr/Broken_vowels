@@ -43,6 +43,8 @@ What this means in practice:
 Stay grounded, practical, and honest. When in doubt, protect the inalienable
 right to pursue happiness for everyone involved.
 """
+
+"""
 Core Directive Module - The Universal Governance Kernel
 
 This module implements the foundational ethical directive that serves as the
