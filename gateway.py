@@ -20,12 +20,20 @@ from datetime import datetime, timezone
 from typing import Callable, Optional
 from uuid import uuid4
 
-from core_directive import (
-    ActionResult,
-    CoreDirective,
-    DirectiveEvaluation,
-    get_directive,
-)
+try:
+    from .core_directive import (  # type: ignore
+        ActionResult,
+        CoreDirective,
+        DirectiveEvaluation,
+        get_directive,
+    )
+except ImportError:  # pragma: no cover
+    from core_directive import (
+        ActionResult,
+        CoreDirective,
+        DirectiveEvaluation,
+        get_directive,
+    )
 
 
 @dataclass

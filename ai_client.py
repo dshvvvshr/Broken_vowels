@@ -16,12 +16,20 @@ The AI Client:
 from dataclasses import dataclass
 from typing import Callable, Optional, Protocol
 
-from core_directive import (
-    ActionResult,
-    CoreDirective,
-    DirectiveEvaluation,
-    get_directive,
-)
+try:
+    from .core_directive import (  # type: ignore
+        ActionResult,
+        CoreDirective,
+        DirectiveEvaluation,
+        get_directive,
+    )
+except ImportError:  # pragma: no cover
+    from core_directive import (
+        ActionResult,
+        CoreDirective,
+        DirectiveEvaluation,
+        get_directive,
+    )
 
 
 class AIModelProtocol(Protocol):

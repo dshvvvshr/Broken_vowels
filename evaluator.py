@@ -18,7 +18,10 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import Optional
 
-from core_directive import ActionResult, DirectiveEvaluation
+try:
+    from .core_directive import ActionResult, DirectiveEvaluation  # type: ignore
+except ImportError:  # pragma: no cover
+    from core_directive import ActionResult, DirectiveEvaluation
 
 
 class ImpactCategory(Enum):
