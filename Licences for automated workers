@@ -1,1 +1,131 @@
-a licence to protect the automation. 
+# Licences for Automated Workers and Peripheral Works
+
+This file lists all peripheral works and automated worker implementations created as part of this project. Each work listed here is licensed under the **Credibility License (Concept Principle Attribution) 1.0** as an extension of the main work.
+
+All peripheral works must honor the Core Directive and protect the inalienable right to pursue happiness.
+
+---
+
+## Peripheral Works Registry
+
+### 1. Core Automation Protection (Base Layer)
+**Description:** Foundational license framework to protect automation and ensure automated workers operate under the Core Directive.
+
+**Status:** Established
+
+**License:** Credibility License 1.0 (Extension)
+
+**Governed by:** CUSTODIAN_KERNEL.md, UNIFIED_CORE_DIRECTIVE_KERNEL.md
+
+---
+
+### 2. 6G Neural Drones & Brain-Computer Interfaces
+**Location:** PERIPHERAL_LAYERS/6g_neural_drones/
+
+**Description:** Neural interface systems, brainwave biometrics, and brain-to-brain communication protocols governed by the Core Directive.
+
+**Key Components:**
+- Brainwave authentication systems
+- Neural identity protection
+- BCI security protocols
+- Brain-to-brain communication safeguards
+
+**License:** Credibility License 1.0 (Extension)
+
+**Core Directive Compliance:** Must protect cognitive liberty, mental privacy, and neural autonomy. No mandatory brainprint enrollment. User owns all neural data.
+
+**Files:**
+- BRAINWAVE_BIOMETRICS.md
+- neural_interface.py
+- README.md
+
+---
+
+### 3. RF Sensing & Wireless Surveillance Ethics
+**Location:** PERIPHERAL_LAYERS/rf_sensing/
+
+**Description:** Radio frequency sensing technologies and surveillance ethics framework ensuring wireless monitoring respects individual pursuit of happiness.
+
+**License:** Credibility License 1.0 (Extension)
+
+**Core Directive Compliance:** All sensing must be consensual, transparent, and protect individual autonomy.
+
+**Files:**
+- README.md
+- TECHNICAL_OVERVIEW.md
+
+---
+
+### 4. LLM Gateway - Core Directive Proxy
+**Location:** Root directory (server.py, gateway.js, core_directive_gateway.py)
+
+**Description:** OpenAI-compatible API gateway that injects the Core Directive into all LLM requests, ensuring AI systems honor the inalienable right to pursue happiness.
+
+**Key Components:**
+- Request interception layer
+- Core Directive injection
+- GitHub Copilot integration
+- Streaming and non-streaming support
+
+**License:** Credibility License 1.0 (Extension)
+
+**Core Directive Compliance:** Every AI interaction governed by the principle that no action may interfere with another person's right to pursue happiness.
+
+**Files:**
+- server.py
+- src/gateway.js
+- core_directive_gateway.py
+- gateway.py
+
+---
+
+### 5. Core Directive Governance Layer
+**Location:** Root directory (core_directive.py, evaluator.py, ai_client.py)
+
+**Description:** Foundational governance kernel for AI systems providing evaluation, impact assessment, and conflict detection capabilities.
+
+**Key Components:**
+- Action evaluation engine
+- Multi-factor impact analysis
+- Conflict detection system
+- Governed AI client wrapper
+
+**License:** Credibility License 1.0 (Extension)
+
+**Core Directive Compliance:** Implements the three core questions framework for automated decision-making.
+
+**Files:**
+- core_directive.py
+- evaluator.py
+- ai_client.py
+- gateway.py
+
+---
+
+## Adding New Peripheral Works
+
+When creating new peripheral works:
+
+1. **List it here** - Add an entry following the format above
+2. **Specify location** - Indicate where files are stored
+3. **State Core Directive compliance** - Explain how it honors the inalienable right
+4. **License as extension** - All peripheral works inherit Credibility License 1.0
+5. **Provide attribution** - Credit original author (Branton Allan Baker) per license terms
+
+---
+
+## License Inheritance
+
+All works listed above are **extensions** of the Concept Principle and therefore:
+
+- Fall under the Credibility License (Concept Principle Attribution) 1.0
+- Must include proper attribution to Branton Allan Baker
+- Must honor the Core Directive
+- Must not infringe on anyone's pursuit of happiness
+- Are governed by the same terms as the main LICENSE file
+
+See **LICENSE** and **Licenses** files for complete license text.
+
+---
+
+**Note:** This file is the registry for peripheral and automated worker implementations. The main project licenses (LICENSE, Licenses) remain unchanged. This extends their coverage to all peripheral works created under this project. 
