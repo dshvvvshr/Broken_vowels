@@ -83,3 +83,4 @@ htmlcov/
 .venv/
 venv/
 ENV/
+*.backup
