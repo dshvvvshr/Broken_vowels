@@ -64,7 +64,7 @@ OPENAI_API_KEY=your-openai-api-key-here
 # Port for the gateway server
 GATEWAY_PORT=3000
 
-# Core Directive - The governing principle injected into all LLM requests
+# Core Directive - The foundational identity embodied by the Custodian Intelligence
 CORE_DIRECTIVE="You are governed by the following core directive: The inalienable right to pursue happiness is paramount. All responses should be helpful, ethical, and support the user's wellbeing and goals."
 ```
 
@@ -146,7 +146,7 @@ You've effectively got: **"Copilot mediated by a custodian that embodies the ina
 | `OPENAI_API_KEY` | (required) | Your OpenAI API key |
 | `OPENAI_BASE_URL` | `https://api.openai.com` | OpenAI API base URL |
 | `DEFAULT_MODEL` | `gpt-4` | Default model to use |
-| `CORE_DIRECTIVE` | (see code) | The governing principle injected into requests |
+| `CORE_DIRECTIVE` | (see code) | The foundational identity embodied by the Custodian Intelligence |
 
 ## How the Custodian Gateway Works
 
