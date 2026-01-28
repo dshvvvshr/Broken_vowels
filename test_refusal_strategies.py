@@ -13,6 +13,7 @@ from core_directive_gateway import (
     AuditEntry,
     log_audit_entry,
     audit_log,
+    audit_log_lock,
 )
 
 
@@ -22,7 +23,8 @@ class TestRefusalStrategies(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures."""
         # Clear audit log before each test
-        audit_log.clear()
+        with audit_log_lock:
+            audit_log.clear()
 
     def test_block_strategy_for_critical_harm(self):
         """Test that critical harm indicators trigger BLOCK strategy."""
@@ -94,7 +96,8 @@ class TestAuditLogging(unittest.TestCase):
     def setUp(self):
         """Set up test fixtures."""
         # Clear audit log before each test
-        audit_log.clear()
+        with audit_log_lock:
+            audit_log.clear()
 
     def test_audit_entry_created(self):
         """Test that audit entries are created for decisions."""

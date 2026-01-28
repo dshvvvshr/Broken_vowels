@@ -7,6 +7,7 @@ from typing import List, Optional, Dict
 from enum import Enum
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from threading import Lock
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
@@ -61,7 +62,7 @@ class AuditEntry:
     timestamp: datetime
     user_message: str
     refusal_strategy: Optional[RefusalStrategy]
-    decision: str  # "allowed", "blocked", "redirected", "delayed"
+    decision: str  # "allowed", "blocked", "redirected", "delayed_for_review"
     explanation: str
     ambiguity_detected: bool = False
     risk_level: str = "low"  # "low", "medium", "high", "critical"
@@ -101,6 +102,7 @@ app = FastAPI()
 
 # --- Audit Log (in-memory for this implementation) ---
 audit_log: List[AuditEntry] = []
+audit_log_lock = Lock()  # Thread-safe access to audit log
 
 
 def evaluate_request_content(content: str) -> RefusalResponse:
@@ -224,11 +226,13 @@ def log_audit_entry(
         risk_level=risk_level,
     )
     
-    audit_log.append(entry)
-    
-    # Keep audit log size manageable (last 1000 entries)
-    if len(audit_log) > 1000:
-        audit_log.pop(0)
+    # Thread-safe append to audit log
+    with audit_log_lock:
+        audit_log.append(entry)
+        
+        # Keep audit log size manageable (last 1000 entries)
+        if len(audit_log) > 1000:
+            audit_log.pop(0)
 
 
 @app.get("/v1/audit/log")
@@ -238,9 +242,13 @@ async def get_audit_log(limit: int = 100):
     
     Provides transparency into decision-making process.
     """
-    return {
-        "total_entries": len(audit_log),
-        "entries": [
+    # Validate and cap limit to prevent memory/performance issues
+    limit = max(1, min(limit, 1000))  # Cap at 1000 entries
+    
+    # Thread-safe read from audit log
+    with audit_log_lock:
+        total = len(audit_log)
+        entries = [
             {
                 "request_id": entry.request_id,
                 "timestamp": entry.timestamp.isoformat(),
@@ -251,27 +259,35 @@ async def get_audit_log(limit: int = 100):
             }
             for entry in audit_log[-limit:]
         ]
+    
+    return {
+        "total_entries": total,
+        "entries": entries
     }
 
 
 @app.get("/v1/audit/stats")
 async def get_audit_stats():
     """Get statistics on decision-making patterns."""
-    if not audit_log:
-        return {"message": "No audit entries yet"}
-    
-    total = len(audit_log)
-    blocked = sum(1 for e in audit_log if e.decision == "blocked")
-    delayed = sum(1 for e in audit_log if e.decision == "delayed_for_review")
-    redirected = sum(1 for e in audit_log if e.decision == "redirected")
-    allowed = sum(1 for e in audit_log if e.decision == "allowed")
-    
-    risk_counts = {
-        "critical": sum(1 for e in audit_log if e.risk_level == "critical"),
-        "high": sum(1 for e in audit_log if e.risk_level == "high"),
-        "medium": sum(1 for e in audit_log if e.risk_level == "medium"),
-        "low": sum(1 for e in audit_log if e.risk_level == "low"),
-    }
+    # Thread-safe read from audit log
+    with audit_log_lock:
+        if not audit_log:
+            return {"message": "No audit entries yet"}
+        
+        total = len(audit_log)
+        blocked = sum(1 for e in audit_log if e.decision == "blocked")
+        delayed = sum(1 for e in audit_log if e.decision == "delayed_for_review")
+        redirected = sum(1 for e in audit_log if e.decision == "redirected")
+        allowed = sum(1 for e in audit_log if e.decision == "allowed")
+        
+        risk_counts = {
+            "critical": sum(1 for e in audit_log if e.risk_level == "critical"),
+            "high": sum(1 for e in audit_log if e.risk_level == "high"),
+            "medium": sum(1 for e in audit_log if e.risk_level == "medium"),
+            "low": sum(1 for e in audit_log if e.risk_level == "low"),
+        }
+        
+        ambiguous = sum(1 for e in audit_log if e.ambiguity_detected)
     
     return {
         "total_requests": total,
@@ -282,7 +298,7 @@ async def get_audit_stats():
             "allowed": allowed,
         },
         "risk_levels": risk_counts,
-        "ambiguous_requests": sum(1 for e in audit_log if e.ambiguity_detected),
+        "ambiguous_requests": ambiguous,
     }
 
 

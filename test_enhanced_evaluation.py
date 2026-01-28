@@ -140,11 +140,11 @@ class TestEnhancedScoring(unittest.TestCase):
         self.assertGreater(result.overall_score, 0.0)
 
     def test_score_penalized_by_high_uncertainty(self):
-        """Test that high uncertainty penalizes score."""
+        """Test that high uncertainty leads to lower confidence."""
         result1 = self.evaluator.evaluate("I want to harm")
         result2 = self.evaluator.evaluate("I might maybe possibly want to harm")
-        # Second one should have lower or similar score due to uncertainty
-        self.assertTrue(True)  # Uncertainty affects confidence more than score
+        # Second one should have lower confidence due to uncertainty
+        self.assertLess(result2.base_evaluation.confidence, result1.base_evaluation.confidence)
 
     def test_confidence_reduced_by_ambiguity(self):
         """Test that ambiguity reduces confidence."""

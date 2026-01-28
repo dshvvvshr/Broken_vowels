@@ -186,11 +186,6 @@ class DirectiveEvaluator:
         """Return list of registered domain evaluators."""
         return list(self._domain_evaluators.keys())
 
-    @property
-    def evaluation_count(self) -> int:
-        """Return the number of evaluations performed."""
-        return self._evaluation_count
-
     def evaluate(self, intent: str, context: Optional[dict] = None) -> DetailedEvaluation:
         """
         Perform detailed evaluation of an intent.
