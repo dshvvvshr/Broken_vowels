@@ -19,14 +19,14 @@ Based on this project's focus on AI governance, ethical systems, and API develop
 - **[OpenAI Python](https://github.com/openai/openai-python)** - Official OpenAI Python library (already used in this project)
 - **[LangChain](https://github.com/langchain-ai/langchain)** - Framework for developing applications powered by language models
 - **[Transformers](https://github.com/huggingface/transformers)** - State-of-the-art Machine Learning for PyTorch, TensorFlow, and JAX
-- **[LiteLLM](https://github.com/BerriAI/litellm)** - Use any LLM as a drop in replacement for GPT with unified interface
+- **[LiteLLM](https://github.com/BerriAI/litellm)** - Use any LLM as a drop-in replacement for GPT with unified interface
 
 ### API Development
 
 - **[FastAPI](https://github.com/tiangolo/fastapi)** - Modern, fast web framework for building APIs (already used in this project)
 - **[Uvicorn](https://github.com/encode/uvicorn)** - Lightning-fast ASGI server (already used in this project)
 - **[Pydantic](https://github.com/pydantic/pydantic)** - Data validation using Python type hints (already used in this project)
-- **[HTTPX](https://github.com/encode/httpx)** - Next generation HTTP client (already used in this project)
+- **[HTTPX](https://github.com/encode/httpx)** - Next generation HTTP client (included as a dependency in this project)
 
 ### Testing & Quality Assurance
 
