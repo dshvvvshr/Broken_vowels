@@ -425,17 +425,6 @@ cd Broken_vowels
 python -m unittest test_governance -v
 ```
 
-## Contributing
-
-Contributions are welcome! The goal is to build a universal governance layer that can be adopted across all AI systems and digital platforms.
-
-See our [Contributing Guide](CONTRIBUTING.md) for details on:
-
-- How to submit issues and pull requests
-- Code style guidelines
-- Testing requirements
-- Code of conduct
-
 ## Resources
 
 For a curated list of Python libraries, tools, and resources relevant to this project, see:
