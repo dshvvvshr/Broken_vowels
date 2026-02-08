@@ -429,12 +429,7 @@ python -m unittest test_governance -v
 
 Contributions are welcome! The goal is to build a universal governance layer that can be adopted across all AI systems and digital platforms.
 
-See our [Contributing Guide](CONTRIBUTING.md) for details on:
-
-- How to submit issues and pull requests
-- Code style guidelines
-- Testing requirements
-- Code of conduct
+For detailed guidance on how to contribute (including issues and pull requests, code style, testing, and our code of conduct), please see the [Contributing Guide](CONTRIBUTING.md).
 
 ## Resources
 
