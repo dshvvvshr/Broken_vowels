@@ -429,6 +429,21 @@ python -m unittest test_governance -v
 
 Contributions are welcome! The goal is to build a universal governance layer that can be adopted across all AI systems and digital platforms.
 
+See our [Contributing Guide](CONTRIBUTING.md) for details on:
+
+- How to submit issues and pull requests
+- Code style guidelines
+- Testing requirements
+- Code of conduct
+
+## Resources
+
+For a curated list of Python libraries, tools, and resources relevant to this project, see:
+
+📚 **[RESOURCES.md](RESOURCES.md)** - Python resources for AI, ethics, and development
+
+This includes links to the [Awesome Python](https://github.com/vinta/awesome-python) collection and other valuable resources for building ethical AI systems.
+
 ## License
 
 This project is dedicated to the public good. The Core Directive belongs to humanity.
