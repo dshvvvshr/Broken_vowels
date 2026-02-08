@@ -7,6 +7,7 @@ Welcome to the Broken_vowels repository! This guide helps you navigate the docum
 ### Getting Started
 - **[README.md](README.md)** - Main project overview and quick start guide
 - **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - One-page overview of the Core Directive
+- **[RESOURCES.md](RESOURCES.md)** - Curated Python libraries and resources
 
 ### Core Concepts
 - **[CUSTODIAN_KERNEL.md](CUSTODIAN_KERNEL.md)** - Complete philosophical framework
