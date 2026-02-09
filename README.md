@@ -3,9 +3,8 @@
 [![Python Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Python%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/python-tests.yml)
 [![Node.js Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Node.js%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/node-tests.yml)
 [![CodeQL](https://github.com/dshvvvshr/Broken_vowels/workflows/CodeQL%20Analysis/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/codeql.yml)
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
-An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows you to govern AI responses through your own rules and principles.
+licence: credibility licence https://drive.google.com/file/d/1WDCscv11Ebhcb0A2uEBtXsiBVkal5Np-/view?usp=drivesdk
+An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows to govern principle of Inalienable Right to Pursue Happiness.
 
 ## Features
 
@@ -135,6 +134,79 @@ When a request comes in:
 
 This ensures your governing principles are always in effect, while preserving any additional context from the client.
 
+## Extending with MCP Servers
+
+You can enhance your LLM Gateway with additional capabilities using MCP (Model Context Protocol) servers. MCP servers provide tools and resources that extend what AI assistants can do.
+
+### Installing the Brave Search MCP Server
+
+The Brave Search MCP server adds web search capabilities to AI assistants, allowing them to search the web and retrieve current information.
+
+#### Prerequisites
+
+- Node.js v18.x, v20.x, or v22.x (LTS versions recommended)
+- A [Brave Search API key](https://brave.com/search/api/) (free tier available)
+- An MCP-compatible client (Claude Desktop, Cursor, Windsurf, etc.)
+
+#### Installation
+
+Use the Smithery CLI to install the Brave Search MCP server. Replace `<client>` with your MCP client choice (e.g., `claude`, `cursor`, `windsurf`, `cline`):
+
+```bash
+npx -y @smithery/cli install brave --client <client>
+```
+
+You'll be prompted for:
+1. Your Brave Search API key
+2. Optional telemetry preferences
+
+Alternatively, you can provide the configuration via command line to skip prompts:
+
+```bash
+npx -y @smithery/cli install brave --client <client> --config '{"BRAVE_API_KEY":"your_api_key_here"}'
+```
+
+Example for Claude Desktop:
+
+```bash
+npx -y @smithery/cli install brave --client claude --config '{"BRAVE_API_KEY":"your_api_key_here"}'
+```
+
+#### What Gets Installed
+
+The Smithery CLI will:
+1. Download and configure the Brave Search MCP server
+2. Update your AI client's configuration file (e.g., `claude_desktop_config.json`)
+3. Enable the `brave_web_search` and `brave_local_search` tools in your AI assistant
+
+#### Using Brave Search
+
+Once installed, your AI assistant will have access to:
+- `brave_web_search`: Search the web for current information
+- `brave_local_search`: Perform local business and location searches
+
+The AI can now answer questions about recent events, current prices, news, and other time-sensitive information.
+
+#### Manual Configuration
+
+If you prefer to configure manually, add the following to your MCP client's configuration file:
+
+```json
+{
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
+      }
+    }
+  }
+}
+```
+
+For more MCP servers and capabilities, visit the [Smithery Registry](https://smithery.ai).
+
 ## Testing
 
 ### Node.js Tests
@@ -172,7 +244,7 @@ Please see our [Security Policy](SECURITY.md) for information on:
 
 ## License
 
-This is free and unencumbered software released into the public domain under the [Unlicense](LICENSE). 
+This is free and unencumbered software released into the public domain under the Credibility License (LICENSE). 
 
 This project is dedicated to the public good. The Core Directive belongs to humanity.
 
@@ -356,6 +428,16 @@ python -m unittest test_governance -v
 ## Contributing
 
 Contributions are welcome! The goal is to build a universal governance layer that can be adopted across all AI systems and digital platforms.
+
+For detailed guidance on how to contribute (including issues and pull requests, code style, testing, and our code of conduct), please see the [Contributing Guide](CONTRIBUTING.md).
+
+## Resources
+
+For a curated list of Python libraries, tools, and resources relevant to this project, see:
+
+📚 **[RESOURCES.md](RESOURCES.md)** - Python resources for AI, ethics, and development
+
+This includes links to the [Awesome Python](https://github.com/vinta/awesome-python) collection and other valuable resources for building ethical AI systems.
 
 ## License
 
