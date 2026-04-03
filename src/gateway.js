@@ -16,7 +16,7 @@ const app = express();
 app.use(express.json({ limit: '10mb' }));
 
 // Configuration
-const PORT = process.env.GATEWAY_PORT || 3000;
+const PORT = process.env.PORT || process.env.GATEWAY_PORT || 3000;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_BASE_URL = process.env.OPENAI_BASE_URL || 'https://api.openai.com';
 const DEFAULT_MODEL = process.env.DEFAULT_MODEL || 'gpt-4';
