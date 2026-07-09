@@ -11,7 +11,7 @@ Modules:
     evaluator: Detailed evaluation engine
 """
 
-from core_directive import (
+from .core_directive import (
     ActionResult,
     CoreDirective,
     DirectiveEvaluation,
@@ -19,14 +19,14 @@ from core_directive import (
     get_directive,
     is_allowed,
 )
-from ai_client import (
+from .ai_client import (
     AIResponse,
     GovernedAIClient,
     MockAIModel,
     create_client,
     create_test_client,
 )
-from gateway import (
+from .gateway import (
     AuditEntry,
     GovernanceGateway,
     GatewayRequest,
@@ -35,7 +35,7 @@ from gateway import (
     content_filter_middleware,
     rate_limit_middleware,
 )
-from evaluator import (
+from .evaluator import (
     ConflictAssessment,
     ConflictType,
     DetailedEvaluation,
