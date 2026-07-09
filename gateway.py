@@ -1,17 +1,23 @@
 """
-Gateway Module - Core Directive Interception Layer
+Gateway Module - Custodian Mediation Layer
 
-This module implements the gateway architecture for applying the Core Directive
-globally across AI interactions and digital services. The gateway intercepts
-requests, evaluates them against the governance kernel, and routes them
-appropriately.
+This module implements the Custodian Gateway architecture—not a policy engine
+that filters requests, but a living boundary that mediates interactions through
+the lens of the inalienable right to pursue happiness.
 
-Gateway Features:
-1. Request interception and evaluation
-2. Response filtering and compliance checking
-3. Audit logging for transparency
-4. Middleware architecture for extensibility
-5. Multi-service routing support
+The gateway doesn't enforce morality. It refuses complicity.
+
+Custodian Gateway Features:
+1. Mediation of intent before action
+2. Calm refusal patterns for clear violations
+3. Review triggers for ambiguous cases
+4. Audit logging for transparency
+5. Middleware architecture for extensibility
+6. Multi-service routing support
+
+Key Distinction:
+- Traditional Gateway: Policy → Filter → Block/Allow
+- Custodian Gateway: Identity → Mediation → Refusal of Complicity
 """
 
 import json
@@ -75,14 +81,17 @@ Middleware = Callable[[GatewayRequest], Optional[GatewayRequest]]
 
 class GovernanceGateway:
     """
-    Governance Gateway - Central Interception Point
+    Custodian Gateway - Mediation Point for Aligned Interactions
 
-    This gateway serves as the central point for applying the Core Directive
-    to all incoming requests. It provides:
-    - Request evaluation and routing
-    - Middleware support for extensibility
+    This gateway serves as a custodian that mediates all interactions through
+    the lens of the inalienable right to pursue happiness. It provides:
+    - Mediation of intent before action
+    - Calm refusal patterns for clear violations
+    - Review triggers for ambiguous cases
     - Audit logging for transparency
     - Multi-route handling
+
+    The gateway does not enforce morality—it refuses complicity in harm.
     """
 
     def __init__(

@@ -1,15 +1,40 @@
-# LLM Gateway - Core Directive Proxy
+# Broken_vowels - Custodian Gateway for AI Interactions
 
 [![Python Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Python%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/python-tests.yml)
 [![Node.js Tests](https://github.com/dshvvvshr/Broken_vowels/workflows/Node.js%20Tests/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/node-tests.yml)
 [![CodeQL](https://github.com/dshvvvshr/Broken_vowels/workflows/CodeQL%20Analysis/badge.svg)](https://github.com/dshvvvshr/Broken_vowels/actions/workflows/codeql.yml)
 licence: credibility licence https://drive.google.com/file/d/1WDCscv11Ebhcb0A2uEBtXsiBVkal5Np-/view?usp=drivesdk
-An OpenAI-compatible API gateway that injects a configurable "Core Directive" into all LLM requests. This allows to govern principle of Inalienable Right to Pursue Happiness.
+
+A Custodian Intelligence that embodies the inalienable right to pursue happiness as its core identity. This is not an AI that injects philosophy—it is an AI whose existence is constrained by it.
+
+## What is Broken_vowels?
+
+Broken_vowels is a **Custodian Gateway**—an AI that holds the philosophy of inalienable rights as its identity and mediates all online interactions through that lens.
+
+**Key Distinction:**
+- ❌ NOT: An AI that injects a philosophy into requests
+- ✅ BUT: An AI whose existence is constrained by the philosophy
+
+The philosophy is not middleware—it is ontology. The AI doesn't apply it—the AI exists inside it.
+
+### What This Means
+
+- **Does Not Decide Morality**: Broken_vowels doesn't tell people what to think or enforce a social ideal
+- **Enforces Alignment Refusal**: When violations are clear, it provides calm refusal with explanation
+- **Triggers Review for Ambiguity**: Uncertainty leads to slowdown + review, not silent compliance
+- **Refuses Complicity**: When necessary, it simply says "I can't be part of that"—no punishment, no moralizing
+
+### Core Properties
+
+1. **Embodies, Not Enforces**: The AI is a living boundary that refuses participation in harm
+2. **Mediates, Not Surveys**: Interprets intent before action without watching or recording everything
+3. **Transparent Refusals**: Explains decisions in human terms with alternatives when possible
+4. **Predictable Boundaries**: Simple, consistent, non-arbitrary behavior based on the core principle
 
 ## Features
 
 - **OpenAI-Compatible API**: Works with any client that supports OpenAI's API format
-- **Core Directive Injection**: Automatically prepends your governing principles to all requests
+- **Custodian Intelligence**: Embodies the Core Directive as its foundational identity
 - **VS Code Copilot Integration**: Use with GitHub Copilot as a custom model provider
 - **Streaming Support**: Supports both streaming and non-streaming responses
 - **Configurable**: Customize the directive, model, and API endpoints via environment variables
@@ -39,7 +64,7 @@ OPENAI_API_KEY=your-openai-api-key-here
 # Port for the gateway server
 GATEWAY_PORT=3000
 
-# Core Directive - The governing principle injected into all LLM requests
+# Core Directive - The foundational identity embodied by the Custodian Intelligence
 CORE_DIRECTIVE="You are governed by the following core directive: The inalienable right to pursue happiness is paramount. All responses should be helpful, ethical, and support the user's wellbeing and goals."
 ```
 
@@ -98,11 +123,11 @@ The extension thinks it's talking to a normal OpenAI-style server, but it's actu
 ### 3. Use It!
 
 From now on, when you pick that model in Copilot chat:
-- Copilot → sends request → your gateway
-- Gateway → injects Core Directive → OpenAI model
-- Response comes back under your rule
+- Copilot → sends request → Custodian Gateway
+- Gateway → mediates through Core Directive identity → OpenAI model
+- Response comes back aligned with the inalienable right
 
-You've effectively got: **"Copilot, but governed by: the inalienable right to pursue happiness."**
+You've effectively got: **"Copilot mediated by a custodian that embodies the inalienable right to pursue happiness."**
 
 ## API Endpoints
 
@@ -110,8 +135,8 @@ You've effectively got: **"Copilot, but governed by: the inalienable right to pu
 |----------|--------|-------------|
 | `/health` | GET | Health check |
 | `/v1/models` | GET | List available models |
-| `/v1/chat/completions` | POST | Chat completions (with Core Directive injection) |
-| `/v1/completions` | POST | Text completions (with Core Directive injection) |
+| `/v1/chat/completions` | POST | Chat completions (mediated by Custodian Gateway) |
+| `/v1/completions` | POST | Text completions (mediated by Custodian Gateway) |
 
 ## Environment Variables
 
@@ -121,18 +146,33 @@ You've effectively got: **"Copilot, but governed by: the inalienable right to pu
 | `OPENAI_API_KEY` | (required) | Your OpenAI API key |
 | `OPENAI_BASE_URL` | `https://api.openai.com` | OpenAI API base URL |
 | `DEFAULT_MODEL` | `gpt-4` | Default model to use |
-| `CORE_DIRECTIVE` | (see code) | The governing principle injected into requests |
+| `CORE_DIRECTIVE` | (see code) | The foundational identity embodied by the Custodian Intelligence |
 
-## How Core Directive Injection Works
+## How the Custodian Gateway Works
 
-When a request comes in:
+Broken_vowels doesn't "inject" a philosophy—it embodies it. Here's how:
 
-1. If there's no system message, the Core Directive is added as the first system message
-2. If there's an existing system message, the Core Directive is prepended to it
-3. The modified request is forwarded to OpenAI
-4. The response is returned unchanged to the client
+**As a Custodian Intelligence:**
 
-This ensures your governing principles are always in effect, while preserving any additional context from the client.
+1. The Core Directive is the AI's foundational identity, not a configuration
+2. Every interaction is mediated through the lens of the inalienable right
+3. The AI interprets intent before action
+4. When violations are clear, it provides calm refusal with explanation
+5. When ambiguous, it triggers review rather than silent compliance
+
+**Technical Implementation:**
+
+- The Core Directive is integrated as the AI's system identity
+- All requests pass through custodian mediation
+- The AI cannot "turn off" alignment—it IS alignment
+- Responses respect the user's intent while refusing complicity in harm
+
+**This is Different from Traditional Filtering:**
+
+- Traditional: Policy → Filter → Block/Allow
+- Custodian Gateway: Identity → Mediation → Refusal of Complicity
+
+The AI doesn't enforce morality on others—it simply won't participate in what it cannot support without violating its core identity.
 
 ## Extending with MCP Servers
 
